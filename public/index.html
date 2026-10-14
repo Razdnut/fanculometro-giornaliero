@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fanculometro Giornaliero - Misuratore di Tolleranza e Pazienza</title>
+  <meta name="description" content="Misura con precisione quantistica il tuo livello di fanculizzazione giornaliero con oscillazione a 5 secondi e diagnosi scientifico-ironica.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-emoji">⚡</span>
+        <div>
+          <h1 class="logo-title">Fanculometro</h1>
+          <p class="logo-tagline">Dispositivo Elettronico di Misurazione della Pazienza</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-sound-toggle" class="btn-secondary" title="Attiva/Disattiva effetti sonori">
+          🔊 Suoni: ON
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Gauge Card -->
+    <main class="gauge-card">
+      <!-- SVG Gauge injected here -->
+      <div id="gauge-mount" class="gauge-mount"></div>
+
+      <!-- Live status update banner during 5s measurement -->
+      <div id="status-banner" class="status-banner hidden"></div>
+
+      <!-- Controls & Triggers -->
+      <div class="controls-area">
+        <div class="context-picker">
+          <label for="trigger-context">Fattore di disturbo (opzionale):</label>
+          <select id="trigger-context">
+            <option value="Tutto e tutti">Tutto e tutti (generale)</option>
+            <option value="Collega: 'Hai 2 minuti per una call veloce?'">Collega: "Hai 2 minuti per una call veloce?"</option>
+            <option value="Audio WhatsApp superiore a 3 minuti">Audio WhatsApp superiore a 3 minuti</option>
+            <option value="Traffico e gente che non sa usare le frecce">Traffico e gente che non sa usare le frecce</option>
+            <option value="Cliente con modifiche dell'ultimo secondo">Cliente con modifiche dell'ultimo secondo</option>
+            <option value="Chat di gruppo dei parenti/calcetto">Chat di gruppo dei parenti / calcetto</option>
+            <option value="Connessione internet che salta durante una call">Connessione internet che salta</option>
+            <option value="Sveglia lunedì mattina">Sveglia del lunedì mattina</option>
+          </select>
+        </div>
+
+        <button id="btn-measure" class="btn-primary-big">
+          ⚡ MISURA IL TUO FANCULOMETRO
+        </button>
+      </div>
+    </main>
+
+    <!-- Result Diagnosis Card -->
+    <section id="result-card" class="result-card hidden">
+      <div class="res-header">
+        <span id="res-badge" class="res-badge">LIVELLO 0%</span>
+        <span id="res-context-tag" class="res-context-tag hidden"></span>
+      </div>
+
+      <div class="res-body">
+        <div id="res-emoji" class="res-emoji">🧘‍♂️</div>
+        <div class="res-details">
+          <h2 id="res-title" class="res-title">Diagnosi Clinica</h2>
+          <p id="res-description" class="res-desc">Descrizione del livello di fanculizzazione...</p>
+        </div>
+      </div>
+
+      <div class="res-box">
+        <div class="res-box-header">
+          <strong>Prescrizione Medica del Giorno</strong>
+          <button id="btn-next-prescription" class="btn-reroll" type="button" title="Genera un'altra prescrizione medica per questo livello">
+            🔄 Altra Prescrizione
+          </button>
+        </div>
+        <p id="res-prescription">Prescrizione...</p>
+      </div>
+
+      <div class="res-box res-quote-box">
+        <div class="res-box-header">
+          <strong>Motto Odierno</strong>
+          <button id="btn-next-quote" class="btn-reroll" type="button" title="Genera un altro motto per questo livello">
+            🎲 Altro Motto
+          </button>
+        </div>
+        <p id="res-quote">"Motto..."</p>
+      </div>
+
+      <div class="res-actions">
+        <button id="btn-copy-result" class="btn-share">
+          📋 Condividi / Copia per WhatsApp
+        </button>
+      </div>
+    </section>
+
+    <!-- History Log -->
+    <section class="history-card">
+      <div class="history-header">
+        <h3>📋 Storico Misurazioni Odierne</h3>
+        <button id="btn-clear-history" class="btn-text">Cancella</button>
+      </div>
+      <ul id="history-list" class="history-list">
+        <!-- Rendered dynamically -->
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Sviluppato con <span>Bun</span> &amp; Modern Vanilla JavaScript • Precisione garantita al 100%</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="gauge.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

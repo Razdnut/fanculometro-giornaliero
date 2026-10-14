@@ -1,0 +1,18 @@
+{
+  "name": "fanculometro-giornaliero",
+  "version": "1.0.0",
+  "description": "Fanculometro Giornaliero - Web App Bun in puro JavaScript con misurazione ad oscillazione",
+  "main": "server.js",
+  "scripts": {
+    "start": "bun run server.js",
+    "dev": "bun --watch server.js"
+  },
+  "keywords": [
+    "fanculometro",
+    "bun",
+    "gauge",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
